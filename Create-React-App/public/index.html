@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script language="JavaScript">
+      function showInput() {
+
+        document.getElementById('dis_name').innerHTML = "";
+
+        var MyName = document.getElementById("name"),
+         MyImg = document.getElementById("image"),
+         MyEmail = document.getElementById("email"),
+         MyAge = document.getElementById("age");
+
+        document.getElementById('dis_name').innerHTML = "\t"+MyName.value+"\t";
+        document.getElementById('dis_age').innerHTML = "\t"+MyAge.value+"\t";
+
+        if(MyEmail.value.match("@gmail.com"))
+      {
+        document.getElementById('dis_email').innerHTML = "\t"+MyEmail.value+"\t";
+      }
+      else if (MyEmail.value==''){document.getElementById('dis_email').innerHTML = "";}
+      else {document.getElementById('dis_name').innerHTML = "ERROR_OGAR:";
+        document.getElementById('dis_email').innerHTML = " Only Gmail Accounts";
+        document.getElementById('dis_age').innerHTML = " Ristricted";}
+//MyImg.src = "https://images.pexels.com/photos/"+MyName.value+"/pexels-photo-"+MyName.value+".jpeg";
+      }
+      </script>
+      <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        </script>
+        <script>function wellcome() {var uname = document.getElementById("uname");
+          var psw = document.getElementById("psw").value.toString(10);
+          var check_user = document.getElementById("name");
+          var check_psw = document.getElementById("age").value.toString(10);
+          if(check_user.value == uname.value && check_psw == psw)
+          {
+          alert("Welcome " + uname.value + "\n" + " your password is: " + psw);
+          document.getElementById('usern').innerHTML = uname.value;
+          document.getElementById('usern').style.color='greenyellow';
+          document.getElementById('id01').style.display='none'}
+          else{alert("EROR_ACCOUNT:User name or password doe's not match");}
+        }
+          </script>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+      
+  </head>
+  <body onload="startTime();">
+    <b><p class = "calc">degrees Fahrenheit:<input id="f" onkeyup="convert('F')" /></p></b>
+    <b><p class = "calc">degrees Celsius:<input id="c" onkeyup="convert('C')" /></p></b>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+      <script>
+        function reg() {
+    var x = document.getElementById('regis');
+    if(x.style.display == "none") {x.style.display = "block"}
+    else { x.style.display = "none"}
+  }
+  </script>
+  <script>
+  function showTime() 
+    {
+      var s = document.getElementById("boga");
+      if(s.style.display == "none") {s.style.display = "block"}
+      else { s.style.display = "none"}
+    }
+    </script>
+      <ul>
+          <li><a href="#" id = "usern">Welcome</a></li>
+          <li><a href="http://localhost:3000/" target="_blank">home</a></li>
+          <li><a href="https://discord.com/login">discord</a></li>
+          <li><a href="http://localhost:3000/" download>download</a></li>
+          <li><a href="#" onclick="reg();">register</a></li>
+          <li><a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">login</a> </li>
+          <li><a href="#" onclick="showTime();">clock</a></li>
+          <li><a id = "boga" style="display:none;"></a></li>
+
+          <div id="id01" class="modal">
+
+            <form class="modal-content animate">
+              <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="img_avatar2.png" alt="Avatar" class="avatar">
+              </div>
+
+              <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" id="uname" required>
+          
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" id="psw" required>
+                  
+                <input type="button" class="btn" value="login" onclick="wellcome();">
+                <label>
+                  <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+              </div>
+          
+              <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+              </div>
+            </form>
+          </div>
+
+
+      </ul>
+      <div id="regis" style="display:block;">
+  <form style="max-width:500px;margin:auto">
+    <div class="input-container">
+      <i class="fa fa-user icon"></i>
+    <input class="input-field" type="text" name="name" placeholder="Username" id="name"/><br/>
+    </div>
+    <div class="input-container">
+      <i class="fa fa-envelope icon"></i>
+    <input class="input-field" type="text" placeholder="Email" name="email" id="email"/><br/>
+    </div>
+    <div class="input-container">
+      <i class="fa fa-key icon"></i>
+    <input class="input-field" type="password" placeholder="Password" name="age" id="age"/><br/>
+    </div>
+  </form>
+  <input class="btn" type="button" value="Send To Table" onclick="showInput();"/><br/>
+  <br>
+      <table>
+        <tr> 
+          <b><th>Name</th></b>
+	        <b><th>E-mail</th></b>
+          <b><th>Password</th></b>
+        </tr>
+        <tr>
+            <td class="spa">   <span id="dis_name"></span>   </td>
+            <td class="spa">   <span id="dis_email"></span>   </td>
+            <td class="spa">   <span id="dis_age"></span>   </td>
+        </tr>
+       </table>
+      </div>
+    <script>
+      function convert(degree) {
+        var x;
+        if (degree == 'C') {
+          x = document.getElementById('c').value * 9 / 5 + 32;
+          document.getElementById('f').value = Math.round(x);
+        } else {
+          x = (document.getElementById('f').value -32) * 5 / 9;
+          document.getElementById('c').value = Math.round(x);
+        }
+      }
+      
+      </script>
+
+<script>
+  function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById("boga").innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+  }
+  function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+  }
+  </script>
+  </body>
+</html>
+
+<!--//document.getElementById("welcome").innerHTML = -->
+
+

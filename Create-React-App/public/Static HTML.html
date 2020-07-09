@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <script language="JavaScript">
+    function showInput()
+{var MyName = document.getElementById("name");
+var MyImg = document.getElementById("image");
+var MyEmail = document.getElementById("email");
+var MyAge = document.getElementById("age");
+        document.getElementById('dis_name').innerHTML = " "+MyName.value+" ";
+
+	document.getElementById('person').innerHTML = MyName.value;
+
+	MyImg.src = "https://images.pexels.com/photos/"+MyName.value+"/pexels-photo-"+MyName.value+".jpeg";
+
+	if(MyEmail.value.match("@gmail.com"))
+{
+	document.getElementById('dis_email').innerHTML = " "+MyEmail.value+" ";
+}
+	else
+{
+	document.getElementById('dis_email').innerHTML = "Invaild Email address: Please use Gmail account!";
+}
+	if(MyAge.value>=18 && MyAge.value<120)
+{
+	document.getElementById('dis_age').innerHTML = " "+MyAge.value+" ";
+}
+	else
+{
+	document.getElementById('dis_age').innerHTML = "invaild age: 18 <= Age < 120 ";
+}
+	if(MyName.value.match("Menahem")){
+		MyImg.src = "https://scontent.fsdv3-1.fna.fbcdn.net/v/t1.0-9/21740453_1367954483322600_1532604359894555927_n.jpg?_nc_cat=107&_nc_sid=09cbfe&_nc_ohc=imCmRO5IckkAX9InSYt&_nc_ht=scontent.fsdv3-1.fna&oh=c111f209f7a57ee2d582f765d57da67d&oe=5F0E03B6";
+	}
+	if(MyName.value.match("Itamar")){
+		MyImg.src = "https://scontent.fsdv3-1.fna.fbcdn.net/v/t1.0-9/62491689_109842716948240_6887919866699841536_o.jpg?_nc_cat=103&_nc_sid=09cbfe&_nc_ohc=1vl9yy05sfQAX-biaL1&_nc_ht=scontent.fsdv3-1.fna&oh=e60517ceefe013af1b241c07eb16882d&oe=5F111473";
+	}
+	if(MyName.value.match("Rachel")){
+		MyImg.src = "https://scontent.fsdv3-1.fna.fbcdn.net/v/t1.0-9/83384611_865760840521586_8690188027860877312_o.jpg?_nc_cat=105&_nc_sid=09cbfe&_nc_ohc=gd4yNoETl3MAX-PuFlW&_nc_ht=scontent.fsdv3-1.fna&oh=7bfa8b9c75a3c2f30a22bce54c8b1198&oe=5F0EFD57";
+	}
+	if(MyName.value.match("Yosef")){
+		MyImg.src = "https://scontent.fsdv3-1.fna.fbcdn.net/v/t1.0-9/82213780_4042023315823535_8109930417093607424_o.jpg?_nc_cat=106&_nc_sid=09cbfe&_nc_ohc=Fz16mD1AvWQAX9Bds3k&_nc_ht=scontent.fsdv3-1.fna&oh=08068179c0f0bceb460a833b6c3cdb64&oe=5F0E1773";
+	}
+}
+  </script>
+
+<title>My First Website</title>
+<style>
+body {	background-color:skyblue;
+	color:#e25822;
+	background-image: url('https://www.itl.cat/pngfile/big/196-1966748_elsweyr-the-elder-scrolls-online-4k-wallpapers-elder.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 1920px 1080px;}
+form {	display: block;
+	width: auto;
+  	color: white;
+  	text-align: left;
+  	padding: 16px;
+  	text-decoration: none;}
+table,th,td {	border:1px solid #e25822;
+		border-collapse:collapse;
+		text-align:center;}
+button,button:active,button:visited {display:block;
+	border:none;
+  	color: white;
+	background-color:grey;
+  	text-align: center;
+  	padding: 16px;
+  	text-decoration: none;}
+button:hover { background-color: #e25822;}
+
+h1 {	text-align:center;
+	color:red;
+	border:2px solid gold;
+	padding:25px;
+	font-family:"Italic";}
+
+ul {	list-style-type:none;
+ 	margin: 0;
+  	padding: 0;
+ 	overflow: hidden;
+  	background-color: grey;}
+
+li {	float:left;}
+li a {
+  	display: block;
+  	color: white;
+  	text-align: center;
+  	padding: 16px;
+  	text-decoration: none;}
+
+li a:hover {	background-color: #e25822;}
+
+</style>
+<body>
+
+<h1>My First Website</h1>
+
+
+<ul>
+<li><a href="http://localhost:3000/" target="_blank">Home</a></li>
+<li><a href="https://discord.com/login">Discord</a></li>
+<li><a href="http://localhost:3000/" download>Download</a></li>
+<li><button type="button" onclick="reg()">Register</button></li>
+</ul>
+
+
+<div id="regis">
+<form>
+Name: <input type="text" name="name" id="name"><br>
+E-mail: <input type="text" name="email" id="email"><br>
+Age: <input type="text" name="age" id="age"><br>
+</form>
+<input type="submit" onclick="showInput();"><br/>
+</div>
+
+<script>
+function reg() {
+var x = document.getElementById("regis");
+if(x.style.display=="none") { x.style.display = "block";}
+else { x.style.display = "none";}
+}
+</script>
+<h2>$NoRole_WebSite$</h2>
+<table style="width:300px;">
+<tr>
+	<th>Name</th>
+	<th>E-mail</th>
+	<th>Age</th>
+</tr>
+<tr>
+	<td><b><pre><span id='dis_name'></span></pre><b></td>
+	<td><b><pre><span id='dis_email'></span></pre><b></td>
+	<td><b><pre><span id='dis_age'></span></pre><b></td>
+</tr>
+</table>
+</body>
+</head>
+</html>
